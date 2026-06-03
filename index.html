@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prof. Lilian Salami @70 · Cancún Celebration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #A8782A;
+      --gold-mid: #C9A060;
+      --gold-light: #D4B896;
+      --gold-pale: #EDE0CC;
+      --cream: #F5F0E6;
+      --ivory: #EDE5D8;
+      --blush: #E8C8C0;
+      --deep: #1C1A17;
+      --text: #1C1A17;
+      --muted: #5A4E42;
+      --border: rgba(168,120,42,0.22);
+      --border-strong: rgba(168,120,42,0.5);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --display: 'Playfair Display', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: #C4907E;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 20%, rgba(245,230,200,0.25) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(90,40,10,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 10% 60%, rgba(245,230,200,0.12) 0%, transparent 55%);
+      z-index: 0;
+    }
+
+    /* floating sparkle particles */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(220,175,90,0.55);
+      animation: floatParticle linear infinite;
+    }
+
+    @keyframes floatParticle {
+      0%   { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 0.6; }
+      100% { transform: translateY(-110vh) rotate(720deg) scale(0.3); opacity: 0; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-ornament {
+      width: 160px;
+      margin-bottom: 2rem;
+      opacity: 0.7;
+      animation: fadeSlideDown 1s ease both;
+    }
+
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 0.7; transform: translateY(0); }
+    }
+
+    .hero-subtitle {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.38em;
+      color: #3D1F08;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      animation: fadeSlideUp 0.9s 0.2s ease both;
+    }
+
+    .hero-name {
+      font-family: var(--display);
+      font-size: clamp(3.5rem, 11vw, 8.5rem);
+      font-weight: 700;
+      color: #2A1505;
+      line-height: 0.95;
+      margin-bottom: 0.15rem;
+      letter-spacing: -0.01em;
+      animation: fadeSlideUp 1s 0.35s ease both;
+    }
+
+    .hero-name span {
+      font-style: italic;
+      font-weight: 900;
+      color: #7A4510;
+      display: block;
+    }
+
+    /* Giant bold 70 — the showstopper */
+    .hero-age-wrap {
+      position: relative;
+      line-height: 1;
+      margin: 0.1rem 0 0.5rem;
+      animation: fadeSlideUp 1s 0.5s ease both;
+    }
+
+    .hero-age-shadow {
+      position: absolute;
+      inset: 0;
+      font-family: var(--display);
+      font-size: clamp(7rem, 22vw, 17rem);
+      font-weight: 900;
+      color: rgba(90,40,10,0.12);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      transform: translate(6px, 6px);
+      user-select: none;
+    }
+
+    .hero-age {
+      font-family: var(--display);
+      font-size: clamp(7rem, 22vw, 17rem);
+      font-weight: 900;
+      background: linear-gradient(160deg, #E8C070 0%, #C9853A 35%, #8A5015 65%, #C9A060 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      position: relative;
+    }
+
+    .hero-tag {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 4vw, 2.8rem);
+      font-weight: 700;
+      font-style: italic;
+      color: #3D1F08;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+      animation: fadeSlideUp 1s 0.65s ease both;
+    }
+
+    .hero-divider-fancy {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.25rem auto 1.75rem;
+      width: min(400px, 80vw);
+      animation: fadeIn 1s 0.8s ease both;
+    }
+
+    .hero-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(60,30,8,0.45));
+    }
+
+    .hero-divider-line.right {
+      background: linear-gradient(to left, transparent, rgba(60,30,8,0.45));
+    }
+
+    .hero-divider-diamond {
+      width: 8px;
+      height: 8px;
+      border: 1.5px solid rgba(60,30,8,0.5);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .hero-location {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.28em;
+      color: rgba(28,10,2,0.62);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      animation: fadeIn 1s 0.85s ease both;
+    }
+
+    .hero-resort {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: clamp(1.15rem, 3vw, 1.6rem);
+      font-weight: 700;
+      color: #3D1F08;
+      margin-bottom: 0.35rem;
+      animation: fadeIn 1s 0.9s ease both;
+    }
+
+    .hero-dates {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      color: rgba(28,10,2,0.55);
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      animation: fadeIn 1s 0.95s ease both;
+    }
+
+    .hero-intro {
+      max-width: 540px;
+      font-family: var(--display);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(28,10,2,0.75);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      animation: fadeIn 1s 1.05s ease both;
+    }
+
+    .hero-pillars {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3.5rem;
+      animation: fadeIn 1s 1.2s ease both;
+    }
+
+    .hero-pillar {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #3D1F08;
+      padding: 0.5rem 1.1rem;
+      border: 1.5px solid rgba(60,30,8,0.35);
+      background: rgba(245,230,200,0.3);
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .hero-pillar:hover {
+      background: rgba(245,230,200,0.55);
+      border-color: rgba(60,30,8,0.6);
+    }
+
+    .scroll-cta {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(28,10,2,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      animation: fadeIn 1.2s 1.4s ease both;
+    }
+
+    .scroll-line {
+      width: 1.5px;
+      height: 55px;
+      background: linear-gradient(to bottom, rgba(90,40,10,0.7), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(0.8); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── NAV ── */
+    .day-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245,240,230,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+
+    .day-nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .day-nav-inner::-webkit-scrollbar { display: none; }
+
+    .nav-item {
+      flex-shrink: 0;
+      padding: 1rem 1.25rem;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-item:hover, .nav-item.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── MAIN CONTENT ── */
+    main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── DAY SECTION ── */
+    .day-section {
+      padding: 5rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .day-section:last-child { border-bottom: none; }
+
+    .day-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .day-number-block {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border: 1px solid var(--border-strong);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .day-num {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .day-month {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .day-meta { flex: 1; }
+
+    .day-weekday {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .day-title {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 300;
+      color: var(--deep);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .day-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .day-badge {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-strong);
+      color: var(--gold);
+    }
+
+    /* ── EVENT CARDS ── */
+    .events-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .event-card {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      transition: border-color 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+    }
+
+    .event-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 4px 24px rgba(168,120,42,0.1);
+    }
+
+    .event-card.featured {
+      grid-template-columns: 80px 1fr;
+      border-color: rgba(168,120,42,0.4);
+      background: linear-gradient(135deg, var(--cream) 0%, var(--ivory) 100%);
+    }
+
+    .event-time-col {
+      padding: 1.5rem 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.4rem;
+      border-right: 1px solid var(--border);
+      background: var(--ivory);
+    }
+
+    .event-card.featured .event-time-col {
+      background: var(--gold-pale);
+      border-right-color: rgba(168,120,42,0.3);
+    }
+
+    .event-time {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--deep);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .event-time-end {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .event-icon {
+      font-size: 1.1rem;
+      margin-top: 0.25rem;
+    }
+
+    .event-body {
+      padding: 1.25rem 1.5rem;
+    }
+
+    .event-label {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .event-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .event-desc {
+      font-family: var(--sans);
+      font-size: 0.93rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .event-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .event-tag {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.7rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .event-tag.highlight {
+      border-color: var(--border-strong);
+      color: var(--gold);
+    }
+
+    .attire-block {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: var(--ivory);
+      border-left: 2px solid var(--gold-mid);
+    }
+
+    .attire-label {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .attire-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--deep);
+    }
+
+    .attire-note {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── IMPORTANT CALLOUT ── */
+    .callout {
+      margin-top: 1rem;
+      padding: 0.85rem 1.25rem;
+      background: rgba(184,146,42,0.07);
+      border: 1px solid rgba(184,146,42,0.35);
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .callout strong {
+      font-weight: 500;
+      color: #8A6A1A;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FREE DAY ── */
+    .free-day-card {
+      border: 1px solid var(--border);
+      background: var(--cream);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .free-day-title {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .free-day-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .free-activities {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .free-activity {
+      font-family: var(--sans);
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .free-activity-icon { font-size: 1.4rem; }
+
+    /* ── GALA SPECIAL ── */
+    .gala-block {
+      border: 1px solid rgba(168,120,42,0.45);
+      background: linear-gradient(160deg, var(--cream) 0%, var(--ivory) 100%);
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gala-block::before {
+      content: '70';
+      position: absolute;
+      right: -1rem;
+      top: -1rem;
+      font-family: var(--serif);
+      font-size: 8rem;
+      font-weight: 300;
+      color: rgba(168,120,42,0.07);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .gala-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .gala-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 300;
+      color: var(--deep);
+      margin-bottom: 0.25rem;
+    }
+
+    .gala-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold-mid);
+      margin-bottom: 2rem;
+    }
+
+    .gala-timeline {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .gala-time-item {
+      flex: 1;
+      min-width: 130px;
+      padding: 1rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .gala-time-item:last-child { border-right: none; }
+
+    .gala-time {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--deep);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .gala-event-name {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1C1A17;
+      color: rgba(245,240,230,0.45);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #C9A060;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(201,168,76,0.4);
+      margin: 1.5rem auto;
+    }
+
+    .footer-love {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── EXPAND TOGGLE ── */
+    .event-card.collapsed .event-desc { display: none; }
+    .event-card.collapsed .event-tags { display: none; }
+    .event-card.collapsed .attire-block { display: none; }
+    .event-card.collapsed .callout { display: none; }
+
+    .expand-hint {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.5rem;
+      opacity: 0.8;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .day-header { flex-direction: column; gap: 1rem; }
+      .event-card, .event-card.featured { grid-template-columns: 70px 1fr; }
+      .gala-timeline { flex-direction: column; }
+      .gala-time-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .gala-time-item:last-child { border-bottom: none; }
+      .hero-pillars { gap: 0.75rem; }
+    }
+
+    /* ── ENTRANCE ANIM ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-content">
+    <svg class="hero-ornament" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="40" x2="70" y2="40" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.45"/>
+      <line x1="130" y1="40" x2="200" y2="40" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.45"/>
+      <circle cx="100" cy="40" r="18" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.5"/>
+      <circle cx="100" cy="40" r="10" stroke="#C9A060" stroke-width="1" stroke-opacity="0.7"/>
+      <circle cx="100" cy="40" r="3" fill="#C9A060" fill-opacity="0.6"/>
+      <line x1="100" y1="0" x2="100" y2="20" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.35"/>
+      <line x1="100" y1="60" x2="100" y2="80" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.35"/>
+      <rect x="86" y="36" width="8" height="8" stroke="#C9A060" stroke-width="0.8" stroke-opacity="0.5" transform="rotate(45 90 40)"/>
+      <rect x="106" y="36" width="8" height="8" stroke="#C9A060" stroke-width="0.8" stroke-opacity="0.5" transform="rotate(45 110 40)"/>
+    </svg>
+
+    <p class="hero-subtitle">A week in paradise · Cancún, Mexico</p>
+
+    <h1 class="hero-name">
+      Prof. Lilian
+      <span>Salami</span>
+    </h1>
+
+    <div class="hero-age-wrap">
+      <div class="hero-age-shadow">70</div>
+      <div class="hero-age">70</div>
+    </div>
+
+    <p class="hero-tag">Seventy &amp; Stunning</p>
+
+    <div class="hero-divider-fancy">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-diamond"></div>
+      <div class="hero-divider-diamond"></div>
+      <div class="hero-divider-diamond"></div>
+      <div class="hero-divider-line right"></div>
+    </div>
+
+    <p class="hero-location">Dreams Natura Resort &amp; Spa</p>
+    <p class="hero-resort">Cancún Celebration Experience</p>
+    <p class="hero-dates">August 5 – 10, 2026</p>
+
+    <p class="hero-intro">
+      Welcome to a week of celebration, family, joy, and unforgettable memories
+      as we honour an incredible woman turning seventy in paradise.
+    </p>
+
+    <div class="hero-pillars">
+      <span class="hero-pillar">✨ Celebration</span>
+      <span class="hero-pillar">👨‍👩‍👧‍👦 Family</span>
+      <span class="hero-pillar">🌊 Relaxation</span>
+      <span class="hero-pillar">💃 Joy</span>
+      <span class="hero-pillar">📸 Memory</span>
+    </div>
+
+    <div class="scroll-cta">
+      <span>Explore the week</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STICKY NAV ══ -->
+<nav class="day-nav" aria-label="Day navigation">
+  <div class="day-nav-inner">
+    <a class="nav-item" href="#aug5">Aug 5 · Arrival</a>
+    <a class="nav-item" href="#aug6">Aug 6 · Family Day</a>
+    <a class="nav-item" href="#aug7">Aug 7 · All White</a>
+    <a class="nav-item" href="#aug8">Aug 8 · The Gala</a>
+    <a class="nav-item" href="#aug9">Aug 9 · Unwind</a>
+    <a class="nav-item" href="#aug10">Aug 10 · Farewell</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ══ AUG 5 ══ -->
+  <section class="day-section fade-up" id="aug5">
+    <div class="day-header">
+      <div class="day-number-block">
+        <span class="day-num">5</span>
+        <span class="day-month">Aug</span>
+      </div>
+      <div class="day-meta">
+        <p class="day-weekday">Wednesday</p>
+        <h2 class="day-title">Arrivals &amp; Welcome Mixer</h2>
+        <p class="day-tagline">Your Cancún journey begins today.</p>
+        <span class="day-badge">🌴 Tropical Casual · Bright Colors</span>
+      </div>
+    </div>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-time-col">
+          <span class="event-time">All<br/>Day</span>
+          <span class="event-icon">✈️</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Arrivals</p>
+          <h3 class="event-title">Welcome to Cancún</h3>
+          <p class="event-desc">
+            Spend the day settling in, exploring the resort grounds, and unwinding after travel.
+            The resort's pools, beach, and spa are all yours from the moment you arrive.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag">Resort Exploration</span>
+            <span class="event-tag">Spa &amp; Beach</span>
+            <span class="event-tag">Flexible Arrival</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card featured">
+        <div class="event-time-col">
+          <span class="event-time">7:00<br/>PM</span>
+          <span class="event-time-end">until 9:30</span>
+          <span class="event-icon">🥂</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Evening Gathering</p>
+          <h3 class="event-title">Welcome Mixer</h3>
+          <p class="event-desc">
+            A relaxed evening to reconnect with familiar faces, meet fellow guests, and
+            officially raise a glass to kick off this very special celebration week.
+            Light bites, cocktails, and the warm energy of family all together again.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag highlight">All Guests</span>
+            <span class="event-tag">Cocktails &amp; Bites</span>
+            <span class="event-tag">Reconnect</span>
+          </div>
+          <div class="attire-block">
+            <p class="attire-label">Dress Code</p>
+            <p class="attire-text">Tropical Casual · Bright Colors</p>
+            <p class="attire-note">Think florals, linens, and vibrant resort wear.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUG 6 ══ -->
+  <section class="day-section fade-up" id="aug6">
+    <div class="day-header">
+      <div class="day-number-block">
+        <span class="day-num">6</span>
+        <span class="day-month">Aug</span>
+      </div>
+      <div class="day-meta">
+        <p class="day-weekday">Thursday</p>
+        <h2 class="day-title">Family Day, Food Tour &amp; Kids' Celebration</h2>
+        <p class="day-tagline">Culture, laughter, and little ones in the spotlight.</p>
+        <span class="day-badge">☀️ Relaxed Resort Casual</span>
+      </div>
+    </div>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-time-col">
+          <span class="event-time">8:00<br/>AM</span>
+          <span class="event-time-end">until 9:15</span>
+          <span class="event-icon">🍳</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Morning</p>
+          <h3 class="event-title">Group Breakfast</h3>
+          <p class="event-desc">
+            Start the day together before the adventures begin. A family breakfast gathering
+            to set the tone — good food, good company, a morning well spent.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag highlight">All Guests</span>
+            <span class="event-tag">Family Moment</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card featured">
+        <div class="event-time-col">
+          <span class="event-time">10:30<br/>AM</span>
+          <span class="event-time-end">until 1:00 PM</span>
+          <span class="event-icon">🌮</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Cultural Experience</p>
+          <h3 class="event-title">Mexican Food Tour</h3>
+          <p class="event-desc">
+            Experience Cancún through its most vibrant lens — food, culture, and stories.
+            Taste your way through authentic local flavours and experience the heart of
+            Mexican culinary tradition firsthand.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag highlight">Optional · Highly Encouraged</span>
+            <span class="event-tag">Local Culture</span>
+            <span class="event-tag">Food &amp; Drink</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-time-col">
+          <span class="event-time">2:00<br/>PM</span>
+          <span class="event-time-end">until 5:00</span>
+          <span class="event-icon">🎂</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Afternoon Celebration</p>
+          <h3 class="event-title">Kids' Birthday Celebration</h3>
+          <p class="event-desc">
+            Celebrating our youngest birthday stars with family fun, sweet treats,
+            games, and poolside joy. A moment just for them, surrounded by the
+            people who love them most.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag">Family Fun</span>
+            <span class="event-tag">Poolside</span>
+            <span class="event-tag">Treats &amp; Games</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card featured">
+        <div class="event-time-col">
+          <span class="event-time">7:00<br/>PM</span>
+          <span class="event-time-end">until late</span>
+          <span class="event-icon">🎤</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Evening Fun</p>
+          <h3 class="event-title">BBQ &amp; Karaoke Night</h3>
+          <p class="event-desc">
+            One of our most relaxed and joyful evenings. Come as you are — ready for karaoke,
+            BBQ favourites, genuine laughter, and whatever spontaneous dancing the night
+            decides to bring. This is casual, optional, and entirely all about fun.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag">Optional</span>
+            <span class="event-tag">Karaoke</span>
+            <span class="event-tag">BBQ</span>
+            <span class="event-tag highlight">Dancing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUG 7 ══ -->
+  <section class="day-section fade-up" id="aug7">
+    <div class="day-header">
+      <div class="day-number-block">
+        <span class="day-num">7</span>
+        <span class="day-month">Aug</span>
+      </div>
+      <div class="day-meta">
+        <p class="day-weekday">Friday</p>
+        <h2 class="day-title">All-White Gathering &amp; Sunset Cruise</h2>
+        <p class="day-tagline">One of our signature moments. Dress in white, shine together.</p>
+        <span class="day-badge">🤍 All White · Elegant Coastal Chic</span>
+      </div>
+    </div>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-time-col">
+          <span class="event-time">9:00<br/>AM</span>
+          <span class="event-time-end">until 10:30</span>
+          <span class="event-icon">🍳</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Morning</p>
+          <h3 class="event-title">Group Breakfast</h3>
+          <p class="event-desc">A leisurely family breakfast before the day's most memorable moments.</p>
+          <div class="event-tags">
+            <span class="event-tag highlight">All Guests</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card featured">
+        <div class="event-time-col">
+          <span class="event-time">1:00<br/>PM</span>
+          <span class="event-time-end">until 3:00</span>
+          <span class="event-icon">📸</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Signature Moment</p>
+          <h3 class="event-title">All-White Gathering &amp; Photo Session</h3>
+          <p class="event-desc">
+            Before cruise departure, we gather for one of this week's most special and
+            lasting moments. Family portraits in white, champagne in hand — the kind of
+            photographs that live on walls and in hearts for generations.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag highlight">Everyone Attends</span>
+            <span class="event-tag">Family Portraits</span>
+            <span class="event-tag">Champagne</span>
+          </div>
+          <div class="callout">
+            <strong>Important:</strong> This gathering is for <em>everyone</em> — even if
+            you are not joining the cruise. Do not miss this moment.
+          </div>
+          <div class="attire-block">
+            <p class="attire-label">Dress Code</p>
+            <p class="attire-text">All White</p>
+            <p class="attire-note">Elegant coastal chic. Think flowy linens, crisp whites, flowing fabrics.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-time-col">
+          <span class="event-time">4:00<br/>PM</span>
+          <span class="event-time-end">until 8:00</span>
+          <span class="event-icon">⛵</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">For Cruise Guests</p>
+          <h3 class="event-title">Sunset Cruise</h3>
+          <p class="event-desc">
+            Set sail into the Caribbean horizon. Four hours of golden light, open water,
+            cocktails, music, and the incomparable beauty of a Cancún sunset — all together.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag highlight">Cruise Guests Only</span>
+            <span class="event-tag">Caribbean Sea</span>
+            <span class="event-tag">Sunset Views</span>
+            <span class="event-tag">Cocktails</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUG 8 — GALA ══ -->
+  <section class="day-section fade-up" id="aug8">
+    <div class="day-header">
+      <div class="day-number-block">
+        <span class="day-num">8</span>
+        <span class="day-month">Aug</span>
+      </div>
+      <div class="day-meta">
+        <p class="day-weekday">Saturday · The Main Event</p>
+        <h2 class="day-title">Prof. Lilian Salami's 70th Birthday Gala</h2>
+        <p class="day-tagline">Seventy &amp; Stunning.</p>
+        <span class="day-badge">✨ Formal Glam · Black Tie Optional</span>
+      </div>
+    </div>
+
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-time-col">
+          <span class="event-time">9:30<br/>AM</span>
+          <span class="event-time-end">until 11:00</span>
+          <span class="event-icon">🌸</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Morning</p>
+          <h3 class="event-title">Birthday Breakfast</h3>
+          <p class="event-desc">
+            An intentional, intimate family moment to celebrate our guest of honour at the
+            start of her most important day. Gathered around the table — with love, warmth,
+            and perhaps a few happy tears.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag highlight">All Guests</span>
+            <span class="event-tag">Guest of Honour</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-time-col">
+          <span class="event-time">After<br/>noon</span>
+          <span class="event-icon">💆</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Free Time</p>
+          <h3 class="event-title">Relax &amp; Prepare</h3>
+          <p class="event-desc">
+            The afternoon is yours. Enjoy the resort, indulge in the spa, take a final
+            beach walk, or spend the hours getting beautifully ready for the evening ahead.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag">Spa</span>
+            <span class="event-tag">Beach</span>
+            <span class="event-tag">Get Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GALA FEATURE BLOCK -->
+      <div class="gala-block">
+        <p class="gala-eyebrow">The Celebration · Saturday Evening</p>
+        <h3 class="gala-title">Formal Birthday Gala</h3>
+        <p class="gala-sub">Seventy &amp; Stunning</p>
+        <div class="gala-timeline">
+          <div class="gala-time-item">
+            <span class="gala-time">6:30 PM</span>
+            <span class="gala-event-name">Cocktail Hour</span>
+          </div>
+          <div class="gala-time-item">
+            <span class="gala-time">7:30 PM</span>
+            <span class="gala-event-name">Dinner &amp; Celebration</span>
+          </div>
+          <div class="gala-time-item">
+            <span class="gala-time">9:30 PM</span>
+            <span class="gala-event-name">Dancing · Until Late</span>
+          </div>
+        </div>
+        <div class="attire-block" style="margin-top: 1.75rem; text-align: left;">
+          <p class="attire-label">Dress Code</p>
+          <p class="attire-text">Formal Glam · Black Tie Optional</p>
+          <p class="attire-note">Elegant. Elevated. Celebration-worthy. This is the evening to shine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUG 9 ══ -->
+  <section class="day-section fade-up" id="aug9">
+    <div class="day-header">
+      <div class="day-number-block">
+        <span class="day-num">9</span>
+        <span class="day-month">Aug</span>
+      </div>
+      <div class="day-meta">
+        <p class="day-weekday">Sunday</p>
+        <h2 class="day-title">Relaxation &amp; Family Connection</h2>
+        <p class="day-tagline">No agenda. No pressure. Just presence.</p>
+      </div>
+    </div>
+
+    <div class="free-day-card">
+      <h3 class="free-day-title">Today is yours.</h3>
+      <p class="free-day-sub">The week's most open, gentle day — designed for nothing but joy.</p>
+      <div class="free-activities">
+        <div class="free-activity">
+          <span class="free-activity-icon">☀️</span>
+          <span>Pool Time</span>
+        </div>
+        <div class="free-activity">
+          <span class="free-activity-icon">🏖️</span>
+          <span>Beach</span>
+        </div>
+        <div class="free-activity">
+          <span class="free-activity-icon">🍹</span>
+          <span>Cocktails</span>
+        </div>
+        <div class="free-activity">
+          <span class="free-activity-icon">💆</span>
+          <span>Spa</span>
+        </div>
+        <div class="free-activity">
+          <span class="free-activity-icon">💕</span>
+          <span>Family</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="events-grid" style="margin-top: 1.5rem;">
+      <div class="event-card">
+        <div class="event-time-col">
+          <span class="event-time">Eve<br/>ning</span>
+          <span class="event-icon">🌅</span>
+        </div>
+        <div class="event-body">
+          <p class="event-label">Optional</p>
+          <h3 class="event-title">Farewell Dinner</h3>
+          <p class="event-desc">
+            A gentle, optional gathering in the evening — for those who want one last shared
+            table before travels home begin tomorrow. No formality required, just warmth.
+          </p>
+          <div class="event-tags">
+            <span class="event-tag">Optional</span>
+            <span class="event-tag">Farewell</span>
+            <span class="event-tag">Casual</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUG 10 ══ -->
+  <section class="day-section fade-up" id="aug10">
+    <div class="day-header">
+      <div class="day-number-block">
+        <span class="day-num">10</span>
+        <span class="day-month">Aug</span>
+      </div>
+      <div class="day-meta">
+        <p class="day-weekday">Monday</p>
+        <h2 class="day-title">Departures</h2>
+        <p class="day-tagline">Until next time, with full hearts.</p>
+      </div>
+    </div>
+
+    <div class="free-day-card">
+      <h3 class="free-day-title" style="font-size: 1.4rem;">Safe travels, beloved family.</h3>
+      <p class="free-day-sub" style="max-width: 440px; margin: 0 auto 1.5rem;">
+        Thank you for crossing oceans and skies to be here.
+        These seven days will live in our memories forever.
+      </p>
+      <p style="font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--gold);">
+        With so much love ❤️
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-name">Prof. Lilian Salami</div>
+  <div class="footer-tagline">Seventy · Celebrated · Loved</div>
+  <div class="footer-divider"></div>
+  <p class="footer-love">Dreams Natura Resort &amp; Spa · Cancún · August 2026</p>
+</footer>
+
+<script>
+  // ── Floating gold particles in hero
+  const container = document.getElementById('particles');
+  const sizes = [4, 5, 6, 8, 10, 5, 4, 7, 6, 4, 5, 9, 4, 6, 5, 4, 7, 5, 6, 4];
+  const delays = [0, 1.2, 2.4, 0.6, 3.1, 1.8, 4.2, 2.8, 0.3, 3.7, 1.5, 5.0, 2.1, 0.9, 4.5, 3.3, 1.1, 2.6, 0.5, 3.9];
+  const durations = [8, 10, 7, 12, 9, 11, 8.5, 13, 7.5, 10.5, 9.5, 8, 11.5, 7, 12.5, 9, 10, 8, 11, 7.5];
+  sizes.forEach((s, i) => {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `width:${s}px;height:${s}px;left:${(i*5.1+Math.sin(i)*8+5)}%;bottom:-${s}px;animation-duration:${durations[i]}s;animation-delay:${delays[i]}s;opacity:0;`;
+    if (i % 3 === 0) { p.style.borderRadius = '2px'; p.style.transform = 'rotate(45deg)'; }
+    if (i % 5 === 0) { p.style.background = 'rgba(245,215,140,0.6)'; }
+    container.appendChild(p);
+  });
+
+  // ── Intersection observer for fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Active nav highlighting on scroll
+  const sections = document.querySelectorAll('.day-section');
+  const navItems = document.querySelectorAll('.nav-item');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navItems.forEach(n => n.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (active) {
+          active.classList.add('active');
+          active.scrollIntoView({ inline: 'nearest', behavior: 'smooth' });
+        }
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-80px 0px -60% 0px' });
+
+  sections.forEach(s => navObserver.observe(s));
+</script>
+
+</body>
+</html>
