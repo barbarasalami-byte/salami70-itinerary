@@ -6,663 +6,714 @@
   <title>Prof. Lilian Salami @70 · Cancún Celebration</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,700&family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #A8782A;
-      --gold-mid: #C9A060;
-      --gold-light: #D4B896;
-      --gold-pale: #EDE0CC;
-      --cream: #F5F0E6;
-      --ivory: #EDE5D8;
-      --blush: #E8C8C0;
-      --deep: #1C1A17;
-      --text: #1C1A17;
-      --muted: #5A4E42;
-      --border: rgba(168,120,42,0.22);
-      --border-strong: rgba(168,120,42,0.5);
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --display: 'Playfair Display', Georgia, serif;
-      --sans: 'Jost', sans-serif;
+      --white:       #FFFFFF;
+      --off-white:   #FAF9F7;
+      --blush:       #E8C4BB;
+      --blush-deep:  #C8907E;
+      --blush-pale:  #F7EDEA;
+      --black:       #161412;
+      --charcoal:    #2C2825;
+      --gold:        #A87828;
+      --gold-light:  #C9A050;
+      --gold-pale:   #F2E8D5;
+      --muted:       #5A4E48;
+      --border:      #E4DFDA;
+      --script: 'Great Vibes', cursive;
+      --serif:  'Fraunces', Georgia, serif;
+      --sans:   'DM Sans', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--sans);
-      background: var(--cream);
-      color: var(--text);
+      background: var(--white);
+      color: var(--black);
       font-size: 16px;
       line-height: 1.7;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── HERO ── */
+    /* ══════════════════════════
+       HERO
+    ══════════════════════════ */
     .hero {
-      min-height: 100vh;
-      background: #C4907E;
+      min-height: 100svh;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 4rem 2rem 5rem;
-      position: relative;
-      overflow: hidden;
     }
 
+    /* Blush arch */
     .hero::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 50% 20%, rgba(245,230,200,0.25) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(90,40,10,0.2) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 40% at 10% 60%, rgba(245,230,200,0.12) 0%, transparent 55%);
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: clamp(320px, 90vw, 720px);
+      height: 68%;
+      background: var(--blush-pale);
+      border-radius: 0 0 50% 50% / 0 0 32% 32%;
       z-index: 0;
     }
 
-    /* floating sparkle particles */
-    .hero-particles {
+    /* Gold top stripe */
+    .hero::after {
+      content: '';
       position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blush-deep), var(--gold-light), var(--blush-deep));
+      z-index: 10;
     }
 
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(220,175,90,0.55);
-      animation: floatParticle linear infinite;
-    }
-
-    @keyframes floatParticle {
-      0%   { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
-      10%  { opacity: 1; }
-      90%  { opacity: 0.6; }
-      100% { transform: translateY(-110vh) rotate(720deg) scale(0.3); opacity: 0; }
-    }
-
-    .hero-content {
+    .hero-inner {
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
+      padding: clamp(4rem, 10vw, 6rem) 1.5rem clamp(3rem, 6vw, 4rem);
+      width: 100%;
+      max-width: 680px;
     }
 
-    .hero-ornament {
-      width: 160px;
-      margin-bottom: 2rem;
-      opacity: 0.7;
-      animation: fadeSlideDown 1s ease both;
-    }
-
-    @keyframes fadeSlideDown {
-      from { opacity: 0; transform: translateY(-16px); }
-      to   { opacity: 0.7; transform: translateY(0); }
-    }
-
-    .hero-subtitle {
+    .hero-eyebrow {
       font-family: var(--sans);
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 0.38em;
-      color: #3D1F08;
+      font-size: clamp(0.62rem, 1.5vw, 0.72rem);
+      font-weight: 700;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      margin-bottom: 1.75rem;
-      animation: fadeSlideUp 0.9s 0.2s ease both;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      animation: riseUp 0.7s 0.1s both;
     }
 
-    .hero-name {
-      font-family: var(--display);
-      font-size: clamp(3.5rem, 11vw, 8.5rem);
-      font-weight: 700;
-      color: #2A1505;
-      line-height: 0.95;
-      margin-bottom: 0.15rem;
-      letter-spacing: -0.01em;
-      animation: fadeSlideUp 1s 0.35s ease both;
+    .hero-script {
+      font-family: var(--script);
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      color: var(--charcoal);
+      line-height: 1.1;
+      margin-bottom: -0.3rem;
+      animation: riseUp 0.8s 0.22s both;
     }
 
-    .hero-name span {
-      font-style: italic;
-      font-weight: 900;
-      color: #7A4510;
-      display: block;
-    }
-
-    /* Giant bold 70 — the showstopper */
-    .hero-age-wrap {
-      position: relative;
-      line-height: 1;
-      margin: 0.1rem 0 0.5rem;
-      animation: fadeSlideUp 1s 0.5s ease both;
-    }
-
-    .hero-age-shadow {
-      position: absolute;
-      inset: 0;
-      font-family: var(--display);
-      font-size: clamp(7rem, 22vw, 17rem);
-      font-weight: 900;
-      color: rgba(90,40,10,0.12);
-      line-height: 1;
-      letter-spacing: -0.03em;
-      transform: translate(6px, 6px);
-      user-select: none;
-    }
-
-    .hero-age {
-      font-family: var(--display);
-      font-size: clamp(7rem, 22vw, 17rem);
-      font-weight: 900;
-      background: linear-gradient(160deg, #E8C070 0%, #C9853A 35%, #8A5015 65%, #C9A060 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      position: relative;
-    }
-
-    .hero-tag {
-      font-family: var(--display);
-      font-size: clamp(1.4rem, 4vw, 2.8rem);
+    .hero-surname {
+      font-family: var(--serif);
+      font-size: clamp(3.8rem, 13vw, 9.5rem);
       font-weight: 700;
       font-style: italic;
-      color: #3D1F08;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.5rem;
-      animation: fadeSlideUp 1s 0.65s ease both;
+      color: var(--black);
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      animation: riseUp 0.9s 0.35s both;
     }
 
-    .hero-divider-fancy {
+    /* "is turning 70" black bar */
+    .hero-age-block {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: var(--black);
+      padding: clamp(0.6rem, 2vw, 0.85rem) clamp(1.5rem, 5vw, 2.75rem);
+      margin-bottom: 2rem;
+      animation: riseUp 0.9s 0.48s both;
+    }
+
+    .hero-is-turning {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0;
+    }
+
+    .hero-is-turning span:first-child {
+      font-family: var(--sans);
+      font-size: clamp(0.6rem, 1.4vw, 0.68rem);
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--blush);
+      line-height: 1;
+    }
+
+    .hero-is-turning span:last-child {
+      font-family: var(--script);
+      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .divider-dot {
+      width: 4px; height: 4px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero-age-num {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--gold-light);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    /* Ornament divider */
+    .hero-orn {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin: 1.25rem auto 1.75rem;
-      width: min(400px, 80vw);
-      animation: fadeIn 1s 0.8s ease both;
+      gap: 0.75rem;
+      width: clamp(240px, 60vw, 340px);
+      margin-bottom: 1.5rem;
+      animation: fadeIn 0.8s 0.62s both;
     }
 
-    .hero-divider-line {
+    .orn-line {
       flex: 1;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(60,30,8,0.45));
+      background: linear-gradient(to right, transparent, var(--blush-deep));
+      opacity: 0.6;
     }
 
-    .hero-divider-line.right {
-      background: linear-gradient(to left, transparent, rgba(60,30,8,0.45));
-    }
+    .orn-line.rev { background: linear-gradient(to left, transparent, var(--blush-deep)); }
 
-    .hero-divider-diamond {
-      width: 8px;
-      height: 8px;
-      border: 1.5px solid rgba(60,30,8,0.5);
+    .orn-gem {
+      width: 7px; height: 7px;
+      border: 1.5px solid var(--gold);
       transform: rotate(45deg);
       flex-shrink: 0;
     }
 
     .hero-location {
       font-family: var(--sans);
-      font-weight: 600;
-      font-size: 0.82rem;
-      letter-spacing: 0.28em;
-      color: rgba(28,10,2,0.62);
+      font-size: clamp(0.68rem, 1.6vw, 0.78rem);
+      font-weight: 500;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      margin-bottom: 0.35rem;
-      animation: fadeIn 1s 0.85s ease both;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+      animation: fadeIn 0.8s 0.68s both;
     }
 
     .hero-resort {
-      font-family: var(--display);
-      font-style: italic;
-      font-size: clamp(1.15rem, 3vw, 1.6rem);
-      font-weight: 700;
-      color: #3D1F08;
-      margin-bottom: 0.35rem;
-      animation: fadeIn 1s 0.9s ease both;
+      font-family: var(--script);
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      color: var(--charcoal);
+      margin-bottom: 0.3rem;
+      animation: fadeIn 0.8s 0.74s both;
     }
 
     .hero-dates {
       font-family: var(--sans);
-      font-weight: 600;
-      font-size: 0.82rem;
-      letter-spacing: 0.22em;
-      color: rgba(28,10,2,0.55);
+      font-size: clamp(0.68rem, 1.6vw, 0.78rem);
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 3rem;
-      animation: fadeIn 1s 0.95s ease both;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      animation: fadeIn 0.8s 0.8s both;
     }
 
     .hero-intro {
-      max-width: 540px;
-      font-family: var(--display);
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      font-weight: 400;
+      max-width: 440px;
+      font-family: var(--serif);
       font-style: italic;
-      color: rgba(28,10,2,0.75);
-      line-height: 1.75;
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.85;
       margin-bottom: 2.5rem;
-      animation: fadeIn 1s 1.05s ease both;
+      animation: fadeIn 0.8s 0.9s both;
     }
 
     .hero-pillars {
       display: flex;
-      gap: 0.75rem;
       flex-wrap: wrap;
+      gap: 0.5rem;
       justify-content: center;
       margin-bottom: 3.5rem;
-      animation: fadeIn 1s 1.2s ease both;
+      animation: fadeIn 0.8s 1.05s both;
     }
 
     .hero-pillar {
       font-family: var(--sans);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
+      font-size: clamp(0.62rem, 1.4vw, 0.7rem);
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #3D1F08;
+      color: var(--charcoal);
       padding: 0.5rem 1.1rem;
-      border: 1.5px solid rgba(60,30,8,0.35);
-      background: rgba(245,230,200,0.3);
-      transition: background 0.2s, border-color 0.2s;
+      background: var(--blush-pale);
+      border: 1.5px solid var(--blush);
     }
 
-    .hero-pillar:hover {
-      background: rgba(245,230,200,0.55);
-      border-color: rgba(60,30,8,0.6);
-    }
-
-    .scroll-cta {
+    .scroll-hint {
       font-family: var(--sans);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: rgba(28,10,2,0.5);
+      color: var(--muted);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.75rem;
-      animation: fadeIn 1.2s 1.4s ease both;
+      gap: 0.6rem;
+      animation: fadeIn 0.8s 1.2s both;
     }
 
-    .scroll-line {
-      width: 1.5px;
-      height: 55px;
-      background: linear-gradient(to bottom, rgba(90,40,10,0.7), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
+    .scroll-bar {
+      width: 1.5px; height: 48px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: pulse 2.2s ease-in-out infinite;
     }
 
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; transform: scaleY(0.8); }
-      50% { opacity: 1; transform: scaleY(1); }
-    }
-
-    @keyframes fadeSlideUp {
+    @keyframes riseUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
+    @keyframes pulse {
+      0%,100% { opacity: 0.3; transform: scaleY(0.8); }
+      50%      { opacity: 1;   transform: scaleY(1); }
+    }
 
-    /* ── NAV ── */
+    /* ══════════════════════════
+       CHAMPAGNE BUBBLES
+    ══════════════════════════ */
+    #bubble-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ══════════════════════════
+       TOP NAV
+    ══════════════════════════ */
     .day-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(245,240,230,0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(255,255,255,0.0);
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+      transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease;
+    }
+
+    /* Scrolled state — applied via JS */
+    .day-nav.scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom-color: var(--border);
     }
 
     .day-nav-inner {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
+      padding: 0 1.5rem;
       display: flex;
-      gap: 0;
-      overflow-x: auto;
-      scrollbar-width: none;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
     }
 
-    .day-nav-inner::-webkit-scrollbar { display: none; }
-
-    .nav-item {
-      flex-shrink: 0;
-      padding: 1rem 1.25rem;
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
+    /* Logo / brand in nav */
+    .nav-brand {
+      font-family: var(--script);
+      font-size: 1.45rem;
+      color: var(--charcoal);
       text-decoration: none;
       white-space: nowrap;
+      transition: color 0.2s;
+      flex-shrink: 0;
     }
 
-    .nav-item:hover, .nav-item.active {
+    .day-nav.scrolled .nav-brand { color: var(--black); }
+
+    /* Desktop links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      list-style: none;
+    }
+
+    .nav-item {
+      padding: 0 0.85rem;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+      line-height: 58px;
+    }
+
+    .day-nav.scrolled .nav-item { color: var(--muted); }
+    .nav-item:hover { color: var(--black); }
+    .nav-item.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* Hamburger button — mobile only */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 201;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: transform 0.28s ease, opacity 0.2s ease, background 0.2s;
+    }
+
+    .day-nav.scrolled .nav-hamburger span { background: var(--black); }
+
+    /* Hamburger → X animation */
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: 58px; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      z-index: 199;
+      transform: translateY(-8px);
+      opacity: 0;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+      pointer-events: none;
+    }
+
+    .nav-drawer.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .nav-drawer-list {
+      list-style: none;
+      padding: 0.5rem 0 1rem;
+    }
+
+    .nav-drawer-list a {
+      display: block;
+      padding: 0.85rem 1.5rem;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-left: 3px solid transparent;
+      transition: color 0.18s, border-color 0.18s, background 0.18s;
+    }
+
+    .nav-drawer-list a:hover,
+    .nav-drawer-list a.active {
       color: var(--gold);
-      border-bottom-color: var(--gold);
+      border-left-color: var(--gold);
+      background: var(--blush-pale);
     }
 
-    /* ── MAIN CONTENT ── */
-    main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+    /* Hero top padding to clear fixed nav */
+    .hero { padding-top: 58px; }
 
-    /* ── DAY SECTION ── */
+    /* ══════════════════════════
+       MAIN CONTENT
+    ══════════════════════════ */
+    main { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+
     .day-section {
-      padding: 5rem 0 3rem;
+      padding: clamp(3rem, 7vw, 5rem) 0 clamp(2rem, 5vw, 3rem);
       border-bottom: 1px solid var(--border);
     }
 
     .day-section:last-child { border-bottom: none; }
 
+    /* Day header */
     .day-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 2rem;
-      margin-bottom: 3.5rem;
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
     }
 
-    .day-number-block {
-      flex-shrink: 0;
-      width: 64px;
-      height: 64px;
-      border: 1px solid var(--border-strong);
+    .day-num-box {
+      width: 64px; height: 64px;
+      background: var(--black);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0;
+      flex-shrink: 0;
     }
 
     .day-num {
       font-family: var(--serif);
       font-size: 1.6rem;
-      font-weight: 300;
-      color: var(--gold);
+      font-weight: 700;
+      color: var(--gold-light);
       line-height: 1;
     }
 
-    .day-month {
+    .day-mo {
       font-family: var(--sans);
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--blush);
     }
-
-    .day-meta { flex: 1; }
 
     .day-weekday {
       font-family: var(--sans);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.22em;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
 
     .day-title {
       font-family: var(--serif);
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      font-weight: 300;
-      color: var(--deep);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--black);
       line-height: 1.15;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .day-tagline {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.05rem;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 400;
       color: var(--muted);
+      margin-bottom: 0.75rem;
     }
 
-    .day-badge {
+    .attire-pill {
       display: inline-block;
-      margin-top: 0.75rem;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      border: 1px solid var(--border-strong);
+      padding: 0.35rem 0.9rem;
+      background: var(--gold-pale);
       color: var(--gold);
+      border: 1px solid rgba(168,120,40,0.3);
     }
 
-    /* ── EVENT CARDS ── */
+    /* EVENT CARDS */
     .events-grid {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1px;
+      background: var(--border);
     }
 
     .event-card {
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 0;
-      border: 1px solid var(--border);
-      background: var(--cream);
-      transition: border-color 0.25s, box-shadow 0.25s;
-      cursor: pointer;
+      grid-template-columns: 88px 1fr;
+      background: var(--white);
+      transition: background 0.18s;
     }
 
-    .event-card:hover {
-      border-color: var(--border-strong);
-      box-shadow: 0 4px 24px rgba(168,120,42,0.1);
-    }
+    .event-card:hover        { background: var(--off-white); }
+    .event-card.featured     { background: var(--off-white); }
+    .event-card.blush-card   { background: var(--blush-pale); }
+    .event-card.blush-card:hover { background: #EDD8D3; }
 
-    .event-card.featured {
-      grid-template-columns: 80px 1fr;
-      border-color: rgba(168,120,42,0.4);
-      background: linear-gradient(135deg, var(--cream) 0%, var(--ivory) 100%);
-    }
-
-    .event-time-col {
-      padding: 1.5rem 0.75rem;
+    .time-col {
+      padding: 1.4rem 0.75rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       gap: 0.4rem;
       border-right: 1px solid var(--border);
-      background: var(--ivory);
     }
 
-    .event-card.featured .event-time-col {
-      background: var(--gold-pale);
-      border-right-color: rgba(168,120,42,0.3);
-    }
+    .event-card.featured .time-col  { border-right-color: #D8D0C8; }
+    .event-card.blush-card .time-col { border-right-color: var(--blush); }
 
-    .event-time {
+    .time-main {
       font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--deep);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--black);
       text-align: center;
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
-    .event-time-end {
+    .time-end {
       font-family: var(--sans);
-      font-size: 0.68rem;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-
-    .event-icon {
-      font-size: 1.1rem;
-      margin-top: 0.25rem;
-    }
-
-    .event-body {
-      padding: 1.25rem 1.5rem;
-    }
-
-    .event-label {
-      font-family: var(--sans);
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .event-body { padding: 1.25rem 1.4rem; }
+
+    .event-kicker {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.28rem;
     }
 
     .event-title {
       font-family: var(--serif);
-      font-size: 1.35rem;
-      font-weight: 500;
-      color: var(--deep);
-      margin-bottom: 0.5rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--black);
+      margin-bottom: 0.55rem;
+      line-height: 1.25;
     }
 
     .event-desc {
       font-family: var(--sans);
-      font-size: 0.93rem;
+      font-size: clamp(0.85rem, 2vw, 0.92rem);
+      font-weight: 400;
       color: var(--muted);
       line-height: 1.7;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
     }
 
-    .event-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
-    .event-tag {
+    .tag {
       font-family: var(--sans);
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.28rem 0.7rem;
-      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      border: 1.5px solid var(--border);
       color: var(--muted);
     }
 
-    .event-tag.highlight {
-      border-color: var(--border-strong);
-      color: var(--gold);
+    .tag.gold  { border-color: rgba(168,120,40,0.45); color: var(--gold); }
+    .tag.black { background: var(--black); border-color: var(--black); color: var(--white); }
+
+    /* Attire strip */
+    .attire-strip {
+      margin-top: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--white);
+      border-left: 3px solid var(--blush-deep);
     }
 
-    .attire-block {
-      margin-top: 1.25rem;
-      padding: 1rem 1.25rem;
-      background: var(--ivory);
-      border-left: 2px solid var(--gold-mid);
-    }
-
-    .attire-label {
+    .attire-strip-label {
       font-family: var(--sans);
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.22em;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
+      color: var(--blush-deep);
+      display: block;
+      margin-bottom: 0.15rem;
     }
 
-    .attire-text {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--deep);
+    .attire-strip-main {
+      font-family: var(--script);
+      font-size: 1.35rem;
+      color: var(--charcoal);
+      display: block;
+      line-height: 1.3;
     }
 
-    .attire-note {
+    .attire-strip-note {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--muted);
+      display: block;
+      margin-top: 0.1rem;
+    }
+
+    /* Callout */
+    .callout {
+      margin-top: 0.85rem;
+      padding: 0.8rem 1rem;
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold);
       font-family: var(--sans);
       font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.2rem;
-    }
-
-    /* ── IMPORTANT CALLOUT ── */
-    .callout {
-      margin-top: 1rem;
-      padding: 0.85rem 1.25rem;
-      background: rgba(184,146,42,0.07);
-      border: 1px solid rgba(184,146,42,0.35);
-      font-family: var(--sans);
-      font-size: 0.88rem;
-      color: var(--text);
+      font-weight: 400;
+      color: var(--charcoal);
       line-height: 1.6;
     }
 
-    .callout strong {
-      font-weight: 500;
-      color: #8A6A1A;
-      letter-spacing: 0.04em;
-    }
+    .callout strong { font-weight: 700; color: var(--gold); }
 
-    /* ── FREE DAY ── */
-    .free-day-card {
-      border: 1px solid var(--border);
-      background: var(--cream);
-      padding: 2.5rem;
-      text-align: center;
-    }
-
-    .free-day-title {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      font-weight: 300;
-      color: var(--deep);
-      margin-bottom: 0.5rem;
-    }
-
-    .free-day-sub {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .free-activities {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .free-activity {
+    /* Event footnote */
+    .event-footnote {
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
       font-family: var(--sans);
-      font-size: 0.76rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 400;
       color: var(--muted);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
+      font-style: italic;
+      line-height: 1.6;
     }
 
-    .free-activity-icon { font-size: 1.4rem; }
-
-    /* ── GALA SPECIAL ── */
+    /* ══════════════════════════
+       GALA BLOCK
+    ══════════════════════════ */
     .gala-block {
-      border: 1px solid rgba(168,120,42,0.45);
-      background: linear-gradient(160deg, var(--cream) 0%, var(--ivory) 100%);
-      padding: 2.5rem;
+      background: var(--black);
+      padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 2.5rem);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -671,192 +722,422 @@
     .gala-block::before {
       content: '70';
       position: absolute;
-      right: -1rem;
-      top: -1rem;
+      right: -0.5rem; bottom: -2.5rem;
       font-family: var(--serif);
-      font-size: 8rem;
-      font-weight: 300;
-      color: rgba(168,120,42,0.07);
+      font-size: 14rem;
+      font-weight: 700;
+      font-style: italic;
+      color: rgba(255,255,255,0.035);
       line-height: 1;
       pointer-events: none;
     }
 
     .gala-eyebrow {
       font-family: var(--sans);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.28em;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--blush);
       margin-bottom: 0.75rem;
     }
 
-    .gala-title {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 300;
-      color: var(--deep);
+    .gala-script {
+      font-family: var(--script);
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      color: var(--white);
+      line-height: 1.15;
       margin-bottom: 0.25rem;
     }
 
     .gala-sub {
       font-family: var(--serif);
       font-style: italic;
-      font-size: 1.05rem;
-      color: var(--gold-mid);
-      margin-bottom: 2rem;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 2.25rem;
     }
 
-    .gala-timeline {
+    .gala-times {
       display: flex;
       justify-content: center;
-      gap: 0;
-      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 2rem;
     }
 
     .gala-time-item {
       flex: 1;
-      min-width: 130px;
-      padding: 1rem;
-      border-right: 1px solid var(--border);
+      padding: 1.25rem 0.5rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
     }
 
     .gala-time-item:last-child { border-right: none; }
 
     .gala-time {
       font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: var(--deep);
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 700;
+      color: var(--gold-light);
       display: block;
       margin-bottom: 0.2rem;
     }
 
-    .gala-event-name {
+    .gala-time-name {
       font-family: var(--sans);
-      font-size: 0.72rem;
-      font-weight: 500;
+      font-size: clamp(0.58rem, 1.3vw, 0.65rem);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .gala-attire { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; }
+
+    .gala-attire-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--blush);
+    }
+
+    .gala-attire-main {
+      font-family: var(--script);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--white);
+    }
+
+    .gala-attire-note {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ══════════════════════════
+       FREE DAY BLOCK
+    ══════════════════════════ */
+    .free-block {
+      background: var(--blush-pale);
+      padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 2rem);
+      text-align: center;
+    }
+
+    .free-script {
+      font-family: var(--script);
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .free-body {
+      font-family: var(--sans);
+      font-size: clamp(0.88rem, 2vw, 0.95rem);
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .free-icons {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 3vw, 2rem);
+      flex-wrap: wrap;
+    }
+
+    .free-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--charcoal);
     }
 
-    /* ── FOOTER ── */
-    footer {
-      background: #1C1A17;
-      color: rgba(245,240,230,0.45);
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .footer-name {
+    .free-icon-gem {
+      width: 28px; height: 28px;
+      border: 2px solid var(--blush-deep);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: var(--serif);
-      font-size: 1.5rem;
       font-style: italic;
-      color: #C9A060;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--blush-deep);
+    }
+
+    /* ══════════════════════════
+       FOOTER
+    ══════════════════════════ */
+    footer {
+      background: var(--black);
+      padding: clamp(3rem, 7vw, 4.5rem) 2rem;
+      text-align: center;
+    }
+
+    .footer-script {
+      font-family: var(--script);
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      color: var(--white);
       margin-bottom: 0.5rem;
     }
 
     .footer-tagline {
       font-family: var(--sans);
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: var(--blush);
+      margin-bottom: 1.5rem;
     }
 
     .footer-divider {
-      width: 40px;
-      height: 1px;
-      background: rgba(201,168,76,0.4);
-      margin: 1.5rem auto;
+      width: 40px; height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin: 0 auto 1.5rem;
     }
 
-    .footer-love {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.45);
-    }
-
-    /* ── EXPAND TOGGLE ── */
-    .event-card.collapsed .event-desc { display: none; }
-    .event-card.collapsed .event-tags { display: none; }
-    .event-card.collapsed .attire-block { display: none; }
-    .event-card.collapsed .callout { display: none; }
-
-    .expand-hint {
+    .footer-sub {
       font-family: var(--sans);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+    }
+
+    /* ══════════════════════════
+       CONTACT PAGE
+    ══════════════════════════ */
+    .contact-section {
+      padding: clamp(3rem, 7vw, 5rem) 0 clamp(2rem, 5vw, 3rem);
+    }
+
+    .contact-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-top: 0.5rem;
-      opacity: 0.8;
+      margin-bottom: 0.35rem;
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .day-header { flex-direction: column; gap: 1rem; }
-      .event-card, .event-card.featured { grid-template-columns: 70px 1fr; }
-      .gala-timeline { flex-direction: column; }
-      .gala-time-item { border-right: none; border-bottom: 1px solid var(--border); }
-      .gala-time-item:last-child { border-bottom: none; }
-      .hero-pillars { gap: 0.75rem; }
+    .contact-title {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--black);
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
     }
 
-    /* ── ENTRANCE ANIM ── */
+    .contact-subtitle {
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .contact-card {
+      background: var(--black);
+      padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 5vw, 2.75rem);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-card-top {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .contact-avatar {
+      width: 64px;
+      height: 64px;
+      background: var(--blush-deep);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--script);
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .contact-name-block {}
+
+    .contact-name {
+      font-family: var(--script);
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .contact-company {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-top: 0.15rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .contact-icon-box {
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon-box svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold-light);
+    }
+
+    .contact-detail-info {}
+
+    .contact-detail-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-detail-value {
+      font-family: var(--sans);
+      font-size: clamp(0.88rem, 2.2vw, 1rem);
+      font-weight: 500;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.18s;
+      word-break: break-all;
+    }
+
+    .contact-detail-value:hover { color: var(--gold-light); }
+
+    .contact-note {
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold);
+      padding: 0.85rem 1.1rem;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.6;
+      margin-top: 2rem;
+    }
+
+    .contact-note strong { font-weight: 700; color: var(--gold); }
+
+    /* ══════════════════════════
+       SCROLL ANIM
+    ══════════════════════════ */
     .fade-up {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════
+       RESPONSIVE
+    ══════════════════════════ */
+    @media (max-width: 700px) {
+      .nav-links    { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-drawer   { display: block; }
+    }
+
+    @media (max-width: 520px) {
+      .event-card { grid-template-columns: 72px 1fr; }
+      .time-col { padding: 1.1rem 0.5rem; }
+      .event-body { padding: 1rem 1rem; }
+      .day-header { grid-template-columns: 56px 1fr; gap: 1rem; }
+      .day-num-box { width: 56px; height: 56px; }
+
+      .gala-times { flex-direction: column; }
+      .gala-time-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .gala-time-item:last-child { border-bottom: none; }
+
+      .hero-age-block { gap: 1rem; padding: 0.6rem 1.25rem; }
+      .hero-pillars { gap: 0.4rem; }
+      .hero-pillar { padding: 0.42rem 0.8rem; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-surname { font-size: 3.2rem; }
+      .hero-script  { font-size: 2.6rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══ HERO ══ -->
+<!-- ══════ HERO ══════ -->
 <section class="hero">
-  <div class="hero-particles" id="particles"></div>
+  <canvas id="bubble-canvas" aria-hidden="true"></canvas>
+  <div class="hero-inner">
 
-  <div class="hero-content">
-    <svg class="hero-ornament" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="40" x2="70" y2="40" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.45"/>
-      <line x1="130" y1="40" x2="200" y2="40" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.45"/>
-      <circle cx="100" cy="40" r="18" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.5"/>
-      <circle cx="100" cy="40" r="10" stroke="#C9A060" stroke-width="1" stroke-opacity="0.7"/>
-      <circle cx="100" cy="40" r="3" fill="#C9A060" fill-opacity="0.6"/>
-      <line x1="100" y1="0" x2="100" y2="20" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.35"/>
-      <line x1="100" y1="60" x2="100" y2="80" stroke="#3D1F08" stroke-width="0.8" stroke-opacity="0.35"/>
-      <rect x="86" y="36" width="8" height="8" stroke="#C9A060" stroke-width="0.8" stroke-opacity="0.5" transform="rotate(45 90 40)"/>
-      <rect x="106" y="36" width="8" height="8" stroke="#C9A060" stroke-width="0.8" stroke-opacity="0.5" transform="rotate(45 110 40)"/>
-    </svg>
+    <p class="hero-eyebrow">A celebration in paradise &middot; Cancún, Mexico</p>
 
-    <p class="hero-subtitle">A week in paradise · Cancún, Mexico</p>
-
-    <h1 class="hero-name">
-      Prof. Lilian
-      <span>Salami</span>
+    <h1>
+      <span class="hero-script">Prof. Lilian</span>
+      <span class="hero-surname">Salami</span>
     </h1>
 
-    <div class="hero-age-wrap">
-      <div class="hero-age-shadow">70</div>
-      <div class="hero-age">70</div>
+    <div class="hero-age-block">
+      <div class="hero-is-turning">
+        <span>is turning</span>
+        <span>Seventy</span>
+      </div>
+      <div class="divider-dot"></div>
+      <span class="hero-age-num">70</span>
     </div>
 
-    <p class="hero-tag">Seventy &amp; Stunning</p>
-
-    <div class="hero-divider-fancy">
-      <div class="hero-divider-line"></div>
-      <div class="hero-divider-diamond"></div>
-      <div class="hero-divider-diamond"></div>
-      <div class="hero-divider-diamond"></div>
-      <div class="hero-divider-line right"></div>
+    <div class="hero-orn">
+      <div class="orn-line"></div>
+      <div class="orn-gem"></div>
+      <div class="orn-gem"></div>
+      <div class="orn-gem"></div>
+      <div class="orn-line rev"></div>
     </div>
 
     <p class="hero-location">Dreams Natura Resort &amp; Spa</p>
@@ -865,97 +1146,115 @@
 
     <p class="hero-intro">
       Welcome to a week of celebration, family, joy, and unforgettable memories
-      as we honour an incredible woman turning seventy in paradise.
+      as we honour an extraordinary woman turning seventy in paradise.
     </p>
 
     <div class="hero-pillars">
-      <span class="hero-pillar">✨ Celebration</span>
-      <span class="hero-pillar">👨‍👩‍👧‍👦 Family</span>
-      <span class="hero-pillar">🌊 Relaxation</span>
-      <span class="hero-pillar">💃 Joy</span>
-      <span class="hero-pillar">📸 Memory</span>
+      <span class="hero-pillar">Celebration</span>
+      <span class="hero-pillar">Family</span>
+      <span class="hero-pillar">Relaxation</span>
+      <span class="hero-pillar">Joy</span>
+      <span class="hero-pillar">Memories</span>
     </div>
 
-    <div class="scroll-cta">
+    <div class="scroll-hint">
       <span>Explore the week</span>
-      <div class="scroll-line"></div>
+      <div class="scroll-bar"></div>
     </div>
+
   </div>
 </section>
 
-<!-- ══ STICKY NAV ══ -->
-<nav class="day-nav" aria-label="Day navigation">
+<!-- ══════ NAV ══════ -->
+<nav class="day-nav" id="main-nav" aria-label="Site navigation">
   <div class="day-nav-inner">
-    <a class="nav-item" href="#aug5">Aug 5 · Arrival</a>
-    <a class="nav-item" href="#aug6">Aug 6 · Family Day</a>
-    <a class="nav-item" href="#aug7">Aug 7 · All White</a>
-    <a class="nav-item" href="#aug8">Aug 8 · The Gala</a>
-    <a class="nav-item" href="#aug9">Aug 9 · Unwind</a>
-    <a class="nav-item" href="#aug10">Aug 10 · Farewell</a>
+
+    <a class="nav-brand" href="#" aria-label="Back to top">Lilian @70</a>
+
+    <!-- Desktop links -->
+    <ul class="nav-links" role="list">
+      <li><a class="nav-item" href="#aug5">Aug 5</a></li>
+      <li><a class="nav-item" href="#aug6">Aug 6</a></li>
+      <li><a class="nav-item" href="#aug7">Aug 7</a></li>
+      <li><a class="nav-item" href="#aug8">Aug 8</a></li>
+      <li><a class="nav-item" href="#aug9">Aug 9</a></li>
+      <li><a class="nav-item" href="#aug10">Aug 10</a></li>
+      <li><a class="nav-item" href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
 </nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <ul class="nav-drawer-list" role="list">
+    <li><a href="#aug5"   class="drawer-item">Aug 5 · Arrival</a></li>
+    <li><a href="#aug6"   class="drawer-item">Aug 6 · Family Day</a></li>
+    <li><a href="#aug7"   class="drawer-item">Aug 7 · All White</a></li>
+    <li><a href="#aug8"   class="drawer-item">Aug 8 · The Gala</a></li>
+    <li><a href="#aug9"   class="drawer-item">Aug 9 · Unwind</a></li>
+    <li><a href="#aug10"  class="drawer-item">Aug 10 · Farewell</a></li>
+    <li><a href="#contact" class="drawer-item">Contact</a></li>
+  </ul>
+</div>
 
 <main>
 
   <!-- ══ AUG 5 ══ -->
   <section class="day-section fade-up" id="aug5">
     <div class="day-header">
-      <div class="day-number-block">
+      <div class="day-num-box">
         <span class="day-num">5</span>
-        <span class="day-month">Aug</span>
+        <span class="day-mo">Aug</span>
       </div>
       <div class="day-meta">
         <p class="day-weekday">Wednesday</p>
         <h2 class="day-title">Arrivals &amp; Welcome Mixer</h2>
         <p class="day-tagline">Your Cancún journey begins today.</p>
-        <span class="day-badge">🌴 Tropical Casual · Bright Colors</span>
+        <span class="attire-pill">Tropical Casual · Bright Colors</span>
       </div>
     </div>
-
     <div class="events-grid">
       <div class="event-card">
-        <div class="event-time-col">
-          <span class="event-time">All<br/>Day</span>
-          <span class="event-icon">✈️</span>
+        <div class="time-col">
+          <span class="time-main">All<br/>Day</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Arrivals</p>
+          <p class="event-kicker">Arrivals</p>
           <h3 class="event-title">Welcome to Cancún</h3>
-          <p class="event-desc">
-            Spend the day settling in, exploring the resort grounds, and unwinding after travel.
-            The resort's pools, beach, and spa are all yours from the moment you arrive.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag">Resort Exploration</span>
-            <span class="event-tag">Spa &amp; Beach</span>
-            <span class="event-tag">Flexible Arrival</span>
+          <p class="event-desc">Settle in, explore the resort, and unwind after travel. The pools, beach, and spa are yours from the moment you arrive.</p>
+          <div class="tag-row">
+            <span class="tag">Resort Exploration</span>
+            <span class="tag">Spa &amp; Beach</span>
+            <span class="tag">Flexible Arrival</span>
           </div>
         </div>
       </div>
-
       <div class="event-card featured">
-        <div class="event-time-col">
-          <span class="event-time">7:00<br/>PM</span>
-          <span class="event-time-end">until 9:30</span>
-          <span class="event-icon">🥂</span>
+        <div class="time-col">
+          <span class="time-main">7:00<br/>PM</span>
+          <span class="time-end">until 9:30</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Evening Gathering</p>
+          <p class="event-kicker">Evening Gathering</p>
           <h3 class="event-title">Welcome Mixer</h3>
-          <p class="event-desc">
-            A relaxed evening to reconnect with familiar faces, meet fellow guests, and
-            officially raise a glass to kick off this very special celebration week.
-            Light bites, cocktails, and the warm energy of family all together again.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag highlight">All Guests</span>
-            <span class="event-tag">Cocktails &amp; Bites</span>
-            <span class="event-tag">Reconnect</span>
+          <p class="event-desc">A relaxed evening to reconnect with familiar faces, meet fellow guests, and raise a glass to officially kick off this very special celebration week.</p>
+          <div class="tag-row">
+            <span class="tag black">All Guests</span>
+            <span class="tag">Cocktails &amp; Bites</span>
+            <span class="tag">Reconnect</span>
           </div>
-          <div class="attire-block">
-            <p class="attire-label">Dress Code</p>
-            <p class="attire-text">Tropical Casual · Bright Colors</p>
-            <p class="attire-note">Think florals, linens, and vibrant resort wear.</p>
+          <div class="attire-strip">
+            <span class="attire-strip-label">Dress Code</span>
+            <span class="attire-strip-main">Tropical Casual</span>
+            <span class="attire-strip-note">Florals, linens, vibrant resort wear.</span>
           </div>
         </div>
       </div>
@@ -965,102 +1264,80 @@
   <!-- ══ AUG 6 ══ -->
   <section class="day-section fade-up" id="aug6">
     <div class="day-header">
-      <div class="day-number-block">
+      <div class="day-num-box">
         <span class="day-num">6</span>
-        <span class="day-month">Aug</span>
+        <span class="day-mo">Aug</span>
       </div>
       <div class="day-meta">
         <p class="day-weekday">Thursday</p>
         <h2 class="day-title">Family Day, Food Tour &amp; Kids' Celebration</h2>
         <p class="day-tagline">Culture, laughter, and little ones in the spotlight.</p>
-        <span class="day-badge">☀️ Relaxed Resort Casual</span>
+        <span class="attire-pill">Relaxed Resort Casual</span>
       </div>
     </div>
-
     <div class="events-grid">
       <div class="event-card">
-        <div class="event-time-col">
-          <span class="event-time">8:00<br/>AM</span>
-          <span class="event-time-end">until 9:15</span>
-          <span class="event-icon">🍳</span>
+        <div class="time-col">
+          <span class="time-main">8:00<br/>AM</span>
+          <span class="time-end">until 9:15</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Morning</p>
+          <p class="event-kicker">Morning</p>
           <h3 class="event-title">Group Breakfast</h3>
-          <p class="event-desc">
-            Start the day together before the adventures begin. A family breakfast gathering
-            to set the tone — good food, good company, a morning well spent.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag highlight">All Guests</span>
-            <span class="event-tag">Family Moment</span>
+          <p class="event-desc">Start the day together before the adventures begin — good food, good company, a morning well spent.</p>
+          <div class="tag-row">
+            <span class="tag black">All Guests</span>
+            <span class="tag">Family Moment</span>
           </div>
         </div>
       </div>
-
       <div class="event-card featured">
-        <div class="event-time-col">
-          <span class="event-time">10:30<br/>AM</span>
-          <span class="event-time-end">until 1:00 PM</span>
-          <span class="event-icon">🌮</span>
+        <div class="time-col">
+          <span class="time-main">10:30<br/>AM</span>
+          <span class="time-end">until 1:00 PM</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Cultural Experience</p>
+          <p class="event-kicker">Cultural Experience</p>
           <h3 class="event-title">Mexican Food Tour</h3>
-          <p class="event-desc">
-            Experience Cancún through its most vibrant lens — food, culture, and stories.
-            Taste your way through authentic local flavours and experience the heart of
-            Mexican culinary tradition firsthand.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag highlight">Optional · Highly Encouraged</span>
-            <span class="event-tag">Local Culture</span>
-            <span class="event-tag">Food &amp; Drink</span>
+          <p class="event-desc">Taste your way through authentic local flavours and experience the heart of Mexican culinary tradition firsthand.</p>
+          <div class="tag-row">
+            <span class="tag gold">Optional · Highly Encouraged</span>
+            <span class="tag">Local Culture</span>
+            <span class="tag">Food &amp; Drink</span>
           </div>
+          <p class="event-footnote">* The Mexican Food Tour is a paid experience. If you are interested in participating, please contact the party planner directly.</p>
         </div>
       </div>
-
-      <div class="event-card">
-        <div class="event-time-col">
-          <span class="event-time">2:00<br/>PM</span>
-          <span class="event-time-end">until 5:00</span>
-          <span class="event-icon">🎂</span>
+      <div class="event-card blush-card">
+        <div class="time-col">
+          <span class="time-main">2:00<br/>PM</span>
+          <span class="time-end">until 5:00</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Afternoon Celebration</p>
+          <p class="event-kicker">Afternoon Celebration</p>
           <h3 class="event-title">Kids' Birthday Celebration</h3>
-          <p class="event-desc">
-            Celebrating our youngest birthday stars with family fun, sweet treats,
-            games, and poolside joy. A moment just for them, surrounded by the
-            people who love them most.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag">Family Fun</span>
-            <span class="event-tag">Poolside</span>
-            <span class="event-tag">Treats &amp; Games</span>
+          <p class="event-desc">Celebrating our youngest birthday stars with family fun, sweet treats, games, and poolside joy.</p>
+          <div class="tag-row">
+            <span class="tag">Family Fun</span>
+            <span class="tag">Poolside</span>
+            <span class="tag">Treats &amp; Games</span>
           </div>
         </div>
       </div>
-
       <div class="event-card featured">
-        <div class="event-time-col">
-          <span class="event-time">7:00<br/>PM</span>
-          <span class="event-time-end">until late</span>
-          <span class="event-icon">🎤</span>
+        <div class="time-col">
+          <span class="time-main">7:00<br/>PM</span>
+          <span class="time-end">until late</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Evening Fun</p>
+          <p class="event-kicker">Evening Fun</p>
           <h3 class="event-title">BBQ &amp; Karaoke Night</h3>
-          <p class="event-desc">
-            One of our most relaxed and joyful evenings. Come as you are — ready for karaoke,
-            BBQ favourites, genuine laughter, and whatever spontaneous dancing the night
-            decides to bring. This is casual, optional, and entirely all about fun.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag">Optional</span>
-            <span class="event-tag">Karaoke</span>
-            <span class="event-tag">BBQ</span>
-            <span class="event-tag highlight">Dancing</span>
+          <p class="event-desc">One of our most relaxed and joyful evenings. Come ready for karaoke, BBQ favourites, genuine laughter, and whatever spontaneous dancing the night brings.</p>
+          <div class="tag-row">
+            <span class="tag">Optional</span>
+            <span class="tag">Karaoke</span>
+            <span class="tag">BBQ</span>
+            <span class="tag gold">Dancing</span>
           </div>
         </div>
       </div>
@@ -1070,170 +1347,142 @@
   <!-- ══ AUG 7 ══ -->
   <section class="day-section fade-up" id="aug7">
     <div class="day-header">
-      <div class="day-number-block">
+      <div class="day-num-box">
         <span class="day-num">7</span>
-        <span class="day-month">Aug</span>
+        <span class="day-mo">Aug</span>
       </div>
       <div class="day-meta">
         <p class="day-weekday">Friday</p>
         <h2 class="day-title">All-White Gathering &amp; Sunset Cruise</h2>
         <p class="day-tagline">One of our signature moments. Dress in white, shine together.</p>
-        <span class="day-badge">🤍 All White · Elegant Coastal Chic</span>
+        <span class="attire-pill">All White · Elegant Coastal Chic</span>
       </div>
     </div>
-
     <div class="events-grid">
       <div class="event-card">
-        <div class="event-time-col">
-          <span class="event-time">9:00<br/>AM</span>
-          <span class="event-time-end">until 10:30</span>
-          <span class="event-icon">🍳</span>
+        <div class="time-col">
+          <span class="time-main">9:00<br/>AM</span>
+          <span class="time-end">until 10:30</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Morning</p>
+          <p class="event-kicker">Morning</p>
           <h3 class="event-title">Group Breakfast</h3>
           <p class="event-desc">A leisurely family breakfast before the day's most memorable moments.</p>
-          <div class="event-tags">
-            <span class="event-tag highlight">All Guests</span>
-          </div>
+          <div class="tag-row"><span class="tag black">All Guests</span></div>
         </div>
       </div>
-
-      <div class="event-card featured">
-        <div class="event-time-col">
-          <span class="event-time">1:00<br/>PM</span>
-          <span class="event-time-end">until 3:00</span>
-          <span class="event-icon">📸</span>
+      <div class="event-card blush-card">
+        <div class="time-col">
+          <span class="time-main">1:00<br/>PM</span>
+          <span class="time-end">until 3:00</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Signature Moment</p>
+          <p class="event-kicker">Signature Moment</p>
           <h3 class="event-title">All-White Gathering &amp; Photo Session</h3>
-          <p class="event-desc">
-            Before cruise departure, we gather for one of this week's most special and
-            lasting moments. Family portraits in white, champagne in hand — the kind of
-            photographs that live on walls and in hearts for generations.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag highlight">Everyone Attends</span>
-            <span class="event-tag">Family Portraits</span>
-            <span class="event-tag">Champagne</span>
+          <p class="event-desc">Family portraits in white, champagne in hand — the kind of photographs that live on walls and in hearts for generations.</p>
+          <div class="tag-row">
+            <span class="tag black">Everyone Attends</span>
+            <span class="tag">Family Portraits</span>
+            <span class="tag">Champagne</span>
           </div>
           <div class="callout">
-            <strong>Important:</strong> This gathering is for <em>everyone</em> — even if
-            you are not joining the cruise. Do not miss this moment.
+            <strong>Important:</strong> This gathering is for <em>everyone</em> — even if you are not joining the cruise. Do not miss this moment.
           </div>
-          <div class="attire-block">
-            <p class="attire-label">Dress Code</p>
-            <p class="attire-text">All White</p>
-            <p class="attire-note">Elegant coastal chic. Think flowy linens, crisp whites, flowing fabrics.</p>
+          <div class="attire-strip">
+            <span class="attire-strip-label">Dress Code</span>
+            <span class="attire-strip-main">All White</span>
+            <span class="attire-strip-note">Elegant coastal chic — flowy linens, crisp whites, flowing fabrics.</span>
           </div>
         </div>
       </div>
-
-      <div class="event-card">
-        <div class="event-time-col">
-          <span class="event-time">4:00<br/>PM</span>
-          <span class="event-time-end">until 8:00</span>
-          <span class="event-icon">⛵</span>
+      <div class="event-card featured">
+        <div class="time-col">
+          <span class="time-main">4:00<br/>PM</span>
+          <span class="time-end">until 8:00</span>
         </div>
         <div class="event-body">
-          <p class="event-label">For Cruise Guests</p>
+          <p class="event-kicker">For Cruise Guests</p>
           <h3 class="event-title">Sunset Cruise</h3>
-          <p class="event-desc">
-            Set sail into the Caribbean horizon. Four hours of golden light, open water,
-            cocktails, music, and the incomparable beauty of a Cancún sunset — all together.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag highlight">Cruise Guests Only</span>
-            <span class="event-tag">Caribbean Sea</span>
-            <span class="event-tag">Sunset Views</span>
-            <span class="event-tag">Cocktails</span>
+          <p class="event-desc">Four hours of golden light, open water, cocktails, music, and the incomparable beauty of a Cancún sunset — all together.</p>
+          <div class="tag-row">
+            <span class="tag gold">Cruise Guests Only</span>
+            <span class="tag">Caribbean Sea</span>
+            <span class="tag">Sunset Views</span>
+            <span class="tag">Cocktails</span>
           </div>
+          <p class="event-footnote">* The sunset cruise is a paid experience. If you are interested in participating, please contact the party planner directly.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ AUG 8 — GALA ══ -->
+  <!-- ══ AUG 8 ══ -->
   <section class="day-section fade-up" id="aug8">
     <div class="day-header">
-      <div class="day-number-block">
+      <div class="day-num-box">
         <span class="day-num">8</span>
-        <span class="day-month">Aug</span>
+        <span class="day-mo">Aug</span>
       </div>
       <div class="day-meta">
         <p class="day-weekday">Saturday · The Main Event</p>
         <h2 class="day-title">Prof. Lilian Salami's 70th Birthday Gala</h2>
         <p class="day-tagline">Seventy &amp; Stunning.</p>
-        <span class="day-badge">✨ Formal Glam · Black Tie Optional</span>
+        <span class="attire-pill">Formal Glam · Black Tie Optional</span>
       </div>
     </div>
-
     <div class="events-grid">
       <div class="event-card">
-        <div class="event-time-col">
-          <span class="event-time">9:30<br/>AM</span>
-          <span class="event-time-end">until 11:00</span>
-          <span class="event-icon">🌸</span>
+        <div class="time-col">
+          <span class="time-main">9:30<br/>AM</span>
+          <span class="time-end">until 11:00</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Morning</p>
+          <p class="event-kicker">Morning</p>
           <h3 class="event-title">Birthday Breakfast</h3>
-          <p class="event-desc">
-            An intentional, intimate family moment to celebrate our guest of honour at the
-            start of her most important day. Gathered around the table — with love, warmth,
-            and perhaps a few happy tears.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag highlight">All Guests</span>
-            <span class="event-tag">Guest of Honour</span>
+          <p class="event-desc">An intentional, intimate family moment to celebrate our guest of honour at the start of her most important day.</p>
+          <div class="tag-row">
+            <span class="tag black">All Guests</span>
+            <span class="tag">Guest of Honour</span>
           </div>
         </div>
       </div>
-
       <div class="event-card">
-        <div class="event-time-col">
-          <span class="event-time">After<br/>noon</span>
-          <span class="event-icon">💆</span>
+        <div class="time-col">
+          <span class="time-main">After<br/>noon</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Free Time</p>
+          <p class="event-kicker">Free Time</p>
           <h3 class="event-title">Relax &amp; Prepare</h3>
-          <p class="event-desc">
-            The afternoon is yours. Enjoy the resort, indulge in the spa, take a final
-            beach walk, or spend the hours getting beautifully ready for the evening ahead.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag">Spa</span>
-            <span class="event-tag">Beach</span>
-            <span class="event-tag">Get Ready</span>
+          <p class="event-desc">The afternoon is yours. Spa, beach, or spend the hours getting beautifully ready for the evening ahead.</p>
+          <div class="tag-row">
+            <span class="tag">Spa</span>
+            <span class="tag">Beach</span>
+            <span class="tag">Get Ready</span>
           </div>
         </div>
       </div>
-
-      <!-- GALA FEATURE BLOCK -->
       <div class="gala-block">
         <p class="gala-eyebrow">The Celebration · Saturday Evening</p>
-        <h3 class="gala-title">Formal Birthday Gala</h3>
+        <h3 class="gala-script">Formal Birthday Gala</h3>
         <p class="gala-sub">Seventy &amp; Stunning</p>
-        <div class="gala-timeline">
+        <div class="gala-times">
           <div class="gala-time-item">
             <span class="gala-time">6:30 PM</span>
-            <span class="gala-event-name">Cocktail Hour</span>
+            <span class="gala-time-name">Cocktail Hour</span>
           </div>
           <div class="gala-time-item">
             <span class="gala-time">7:30 PM</span>
-            <span class="gala-event-name">Dinner &amp; Celebration</span>
+            <span class="gala-time-name">Dinner &amp; Celebration</span>
           </div>
           <div class="gala-time-item">
             <span class="gala-time">9:30 PM</span>
-            <span class="gala-event-name">Dancing · Until Late</span>
+            <span class="gala-time-name">Dancing · Until Late</span>
           </div>
         </div>
-        <div class="attire-block" style="margin-top: 1.75rem; text-align: left;">
-          <p class="attire-label">Dress Code</p>
-          <p class="attire-text">Formal Glam · Black Tie Optional</p>
-          <p class="attire-note">Elegant. Elevated. Celebration-worthy. This is the evening to shine.</p>
+        <div class="gala-attire">
+          <span class="gala-attire-label">Dress Code</span>
+          <span class="gala-attire-main">Formal Glam · Black Tie Optional</span>
+          <span class="gala-attire-note">Elegant. Elevated. Celebration-worthy. This is your night to shine.</span>
         </div>
       </div>
     </div>
@@ -1242,9 +1491,9 @@
   <!-- ══ AUG 9 ══ -->
   <section class="day-section fade-up" id="aug9">
     <div class="day-header">
-      <div class="day-number-block">
+      <div class="day-num-box">
         <span class="day-num">9</span>
-        <span class="day-month">Aug</span>
+        <span class="day-mo">Aug</span>
       </div>
       <div class="day-meta">
         <p class="day-weekday">Sunday</p>
@@ -1252,51 +1501,41 @@
         <p class="day-tagline">No agenda. No pressure. Just presence.</p>
       </div>
     </div>
-
-    <div class="free-day-card">
-      <h3 class="free-day-title">Today is yours.</h3>
-      <p class="free-day-sub">The week's most open, gentle day — designed for nothing but joy.</p>
-      <div class="free-activities">
-        <div class="free-activity">
-          <span class="free-activity-icon">☀️</span>
-          <span>Pool Time</span>
-        </div>
-        <div class="free-activity">
-          <span class="free-activity-icon">🏖️</span>
-          <span>Beach</span>
-        </div>
-        <div class="free-activity">
-          <span class="free-activity-icon">🍹</span>
-          <span>Cocktails</span>
-        </div>
-        <div class="free-activity">
-          <span class="free-activity-icon">💆</span>
-          <span>Spa</span>
-        </div>
-        <div class="free-activity">
-          <span class="free-activity-icon">💕</span>
-          <span>Family</span>
+    <div class="events-grid">
+      <div class="free-block">
+        <p class="free-script">Today is yours.</p>
+        <p class="free-body">The week's most open, gentle day — designed for nothing but joy.</p>
+        <div class="free-icons">
+          <div class="free-icon-item">
+            <div class="free-icon-gem">P</div>
+            <span>Pool</span>
+          </div>
+          <div class="free-icon-item">
+            <div class="free-icon-gem">B</div>
+            <span>Beach</span>
+          </div>
+          <div class="free-icon-item">
+            <div class="free-icon-gem">S</div>
+            <span>Spa</span>
+          </div>
+          <div class="free-icon-item">
+            <div class="free-icon-gem">F</div>
+            <span>Family</span>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="events-grid" style="margin-top: 1.5rem;">
       <div class="event-card">
-        <div class="event-time-col">
-          <span class="event-time">Eve<br/>ning</span>
-          <span class="event-icon">🌅</span>
+        <div class="time-col">
+          <span class="time-main">Eve<br/>ning</span>
         </div>
         <div class="event-body">
-          <p class="event-label">Optional</p>
+          <p class="event-kicker">Optional</p>
           <h3 class="event-title">Farewell Dinner</h3>
-          <p class="event-desc">
-            A gentle, optional gathering in the evening — for those who want one last shared
-            table before travels home begin tomorrow. No formality required, just warmth.
-          </p>
-          <div class="event-tags">
-            <span class="event-tag">Optional</span>
-            <span class="event-tag">Farewell</span>
-            <span class="event-tag">Casual</span>
+          <p class="event-desc">A gentle, optional gathering for those who want one last shared table before travels home begin tomorrow.</p>
+          <div class="tag-row">
+            <span class="tag">Optional</span>
+            <span class="tag">Farewell</span>
+            <span class="tag">Casual</span>
           </div>
         </div>
       </div>
@@ -1306,9 +1545,9 @@
   <!-- ══ AUG 10 ══ -->
   <section class="day-section fade-up" id="aug10">
     <div class="day-header">
-      <div class="day-number-block">
+      <div class="day-num-box">
         <span class="day-num">10</span>
-        <span class="day-month">Aug</span>
+        <span class="day-mo">Aug</span>
       </div>
       <div class="day-meta">
         <p class="day-weekday">Monday</p>
@@ -1316,75 +1555,293 @@
         <p class="day-tagline">Until next time, with full hearts.</p>
       </div>
     </div>
-
-    <div class="free-day-card">
-      <h3 class="free-day-title" style="font-size: 1.4rem;">Safe travels, beloved family.</h3>
-      <p class="free-day-sub" style="max-width: 440px; margin: 0 auto 1.5rem;">
-        Thank you for crossing oceans and skies to be here.
-        These seven days will live in our memories forever.
-      </p>
-      <p style="font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--gold);">
-        With so much love ❤️
-      </p>
+    <div class="events-grid">
+      <div class="free-block">
+        <p class="free-script">Safe travels, beloved family.</p>
+        <p class="free-body" style="max-width:400px;margin:0 auto 0;">
+          Thank you for crossing oceans and skies to be here.<br/>
+          These seven days will live in our memories forever.
+        </p>
+        <p style="font-family:var(--script);font-size:1.8rem;color:var(--gold);margin-top:1.5rem;">
+          With so much love
+        </p>
+      </div>
     </div>
   </section>
 
 </main>
 
+<!-- ══════ CONTACT ══════ -->
+<div style="max-width:960px;margin:0 auto;padding:0 1.25rem;">
+  <section class="contact-section fade-up" id="contact">
+
+    <div class="contact-header">
+      <p class="contact-eyebrow">Get in Touch</p>
+      <h2 class="contact-title">Your Party Planner</h2>
+      <p class="contact-subtitle">For questions about the celebration, the sunset cruise, or any other arrangements, reach out directly.</p>
+    </div>
+
+    <div class="contact-card">
+
+      <div class="contact-card-top">
+        <div class="contact-avatar">J</div>
+        <div class="contact-name-block">
+          <p class="contact-name">Madam Joy</p>
+          <p class="contact-company">Travellers Haven</p>
+        </div>
+      </div>
+
+      <div class="contact-details">
+
+        <!-- WhatsApp -->
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </div>
+          <div class="contact-detail-info">
+            <p class="contact-detail-label">WhatsApp</p>
+            <a class="contact-detail-value" href="https://wa.me/2348033147432" target="_blank" rel="noopener">+234 803 314 7432</a>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-row">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <div class="contact-detail-info">
+            <p class="contact-detail-label">Email</p>
+            <a class="contact-detail-value" href="mailto:travellers_haven@yahoo.com">travellers_haven@yahoo.com</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="contact-note">
+      <strong>Sunset Cruise:</strong> The cruise is a paid experience. Please contact Madam Joy to confirm your spot and receive pricing details.
+    </div>
+
+    <div class="contact-note">
+      <strong>Mexican Food Tour:</strong> The food tour is a paid experience. Please contact Madam Joy to confirm your spot and receive pricing details.
+    </div>
+
+  </section>
+</div>
+
 <footer>
-  <div class="footer-name">Prof. Lilian Salami</div>
-  <div class="footer-tagline">Seventy · Celebrated · Loved</div>
+  <p class="footer-script">Prof. Lilian Salami</p>
+  <p class="footer-tagline">Seventy &middot; Celebrated &middot; Loved</p>
   <div class="footer-divider"></div>
-  <p class="footer-love">Dreams Natura Resort &amp; Spa · Cancún · August 2026</p>
+  <p class="footer-sub">Dreams Natura Resort &amp; Spa &middot; Cancún &middot; August 2026</p>
 </footer>
 
 <script>
-  // ── Floating gold particles in hero
-  const container = document.getElementById('particles');
-  const sizes = [4, 5, 6, 8, 10, 5, 4, 7, 6, 4, 5, 9, 4, 6, 5, 4, 7, 5, 6, 4];
-  const delays = [0, 1.2, 2.4, 0.6, 3.1, 1.8, 4.2, 2.8, 0.3, 3.7, 1.5, 5.0, 2.1, 0.9, 4.5, 3.3, 1.1, 2.6, 0.5, 3.9];
-  const durations = [8, 10, 7, 12, 9, 11, 8.5, 13, 7.5, 10.5, 9.5, 8, 11.5, 7, 12.5, 9, 10, 8, 11, 7.5];
-  sizes.forEach((s, i) => {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    p.style.cssText = `width:${s}px;height:${s}px;left:${(i*5.1+Math.sin(i)*8+5)}%;bottom:-${s}px;animation-duration:${durations[i]}s;animation-delay:${delays[i]}s;opacity:0;`;
-    if (i % 3 === 0) { p.style.borderRadius = '2px'; p.style.transform = 'rotate(45deg)'; }
-    if (i % 5 === 0) { p.style.background = 'rgba(245,215,140,0.6)'; }
-    container.appendChild(p);
+  /* ── Champagne Bubbles ── */
+  (function() {
+    const canvas = document.getElementById('bubble-canvas');
+    const ctx = canvas.getContext('2d');
+    let bubbles = [];
+    let W, H, dpr;
+
+    function resize() {
+      dpr = window.devicePixelRatio || 1;
+      const hero = canvas.parentElement;
+      W = hero.offsetWidth;
+      H = hero.offsetHeight;
+      canvas.width  = W * dpr;
+      canvas.height = H * dpr;
+      canvas.style.width  = W + 'px';
+      canvas.style.height = H + 'px';
+      ctx.scale(dpr, dpr);
+    }
+
+    // Bubble palette: blush pinks, golds, soft whites
+    const palettes = [
+      'rgba(232,196,187,',   // blush
+      'rgba(212,170,96,',    // gold
+      'rgba(255,255,255,',   // white
+      'rgba(200,144,126,',   // blush-deep
+      'rgba(242,232,213,',   // gold pale
+    ];
+
+    function randomPalette() {
+      return palettes[Math.floor(Math.random() * palettes.length)];
+    }
+
+    function createBubble(fromBottom) {
+      const r = Math.random() * 5 + 2.5;  // radius 2.5–7.5px
+      return {
+        x:       Math.random() * W,
+        y:       fromBottom ? H + r : Math.random() * H,
+        r:       r,
+        speed:   Math.random() * 1.4 + 0.7,
+        drift:   (Math.random() - 0.5) * 0.5,
+        opacity: Math.random() * 0.45 + 0.2,
+        baseOpacity: 0,
+        wobble:  Math.random() * Math.PI * 2,
+        wobbleSpeed: Math.random() * 0.022 + 0.008,
+        color:   randomPalette(),
+        shimmer: Math.random() > 0.55,
+      };
+    }
+
+    function initBubbles() {
+      bubbles = [];
+      const count = Math.round(W / 12);
+      for (let i = 0; i < count; i++) {
+        const b = createBubble(false);
+        b.baseOpacity = b.opacity; // already visible on load
+        bubbles.push(b);
+      }
+    }
+
+    function drawBubble(b) {
+      ctx.save();
+
+      // Gentle wobble on x axis
+      const wx = b.x + Math.sin(b.wobble) * 3;
+
+      // Outer circle
+      ctx.beginPath();
+      ctx.arc(wx, b.y, b.r, 0, Math.PI * 2);
+
+      // Radial gradient — glassy look
+      const grad = ctx.createRadialGradient(
+        wx - b.r * 0.3, b.y - b.r * 0.35, b.r * 0.08,
+        wx,             b.y,               b.r
+      );
+      grad.addColorStop(0,   b.color + (b.opacity * 0.9) + ')');
+      grad.addColorStop(0.6, b.color + (b.opacity * 0.4) + ')');
+      grad.addColorStop(1,   b.color + (b.opacity * 0.08) + ')');
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Rim stroke
+      ctx.strokeStyle = b.color + (b.opacity * 0.55) + ')';
+      ctx.lineWidth   = 0.5;
+      ctx.stroke();
+
+      // Tiny highlight dot
+      if (b.shimmer) {
+        ctx.beginPath();
+        ctx.arc(wx - b.r * 0.32, b.y - b.r * 0.38, b.r * 0.2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,255,255,' + (b.opacity * 1.4).toFixed(2) + ')';
+        ctx.fill();
+      }
+
+      ctx.restore();
+    }
+
+    function tick() {
+      ctx.clearRect(0, 0, W, H);
+
+      for (let i = 0; i < bubbles.length; i++) {
+        const b = bubbles[i];
+        b.y      -= b.speed;
+        b.x      += b.drift;
+        b.wobble += b.wobbleSpeed;
+
+        // Fade in gently from bottom
+        if (b.baseOpacity < b.opacity) {
+          b.baseOpacity = Math.min(b.opacity, b.baseOpacity + 0.008);
+        }
+
+        // Draw with current opacity (no fade-out — just recycle at top)
+        const savedOpacity = b.opacity;
+        b.opacity = b.baseOpacity;
+        drawBubble(b);
+        b.opacity = savedOpacity;
+
+        // Recycle cleanly when bubble exits top
+        if (b.y + b.r < -10) {
+          const nb = createBubble(true);
+          nb.baseOpacity = 0;
+          bubbles[i] = nb;
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    window.addEventListener('resize', () => { resize(); initBubbles(); });
+    resize();
+    initBubbles();
+    tick();
+  })();
+
+  /* ── Nav: scroll state ── */
+  const mainNav = document.getElementById('main-nav');
+  function updateNavScroll() {
+    if (window.scrollY > 40) {
+      mainNav.classList.add('scrolled');
+    } else {
+      mainNav.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNavScroll, { passive: true });
+  updateNavScroll();
+
+  /* ── Hamburger toggle ── */
+  const hamburger = document.getElementById('hamburger');
+  const drawer    = document.getElementById('nav-drawer');
+
+  function closeDrawer() {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.contains('open');
+    if (isOpen) {
+      closeDrawer();
+    } else {
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
   });
 
-  // ── Intersection observer for fade-up animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(el => {
-      if (el.isIntersecting) {
-        el.target.classList.add('visible');
-        observer.unobserve(el.target);
-      }
-    });
-  }, { threshold: 0.08 });
+  // Close drawer when any drawer link is tapped
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeDrawer);
+  });
 
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (!mainNav.contains(e.target) && !drawer.contains(e.target)) closeDrawer();
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // ── Active nav highlighting on scroll
-  const sections = document.querySelectorAll('.day-section');
-  const navItems = document.querySelectorAll('.nav-item');
-
-  const navObserver = new IntersectionObserver((entries) => {
+  const navObs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.id;
-        navItems.forEach(n => n.classList.remove('active'));
-        const active = document.querySelector(`.nav-item[href="#${id}"]`);
-        if (active) {
-          active.classList.add('active');
-          active.scrollIntoView({ inline: 'nearest', behavior: 'smooth' });
-        }
+        // Desktop links
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        const desktopLink = document.querySelector(`.nav-item[href="#${id}"]`);
+        if (desktopLink) desktopLink.classList.add('active');
+        // Drawer links
+        document.querySelectorAll('.drawer-item').forEach(n => n.classList.remove('active'));
+        const drawerLink = document.querySelector(`.drawer-item[href="#${id}"]`);
+        if (drawerLink) drawerLink.classList.add('active');
       }
     });
-  }, { threshold: 0.4, rootMargin: '-80px 0px -60% 0px' });
-
-  sections.forEach(s => navObserver.observe(s));
+  }, { threshold: 0.3, rootMargin: '-58px 0px -55% 0px' });
+  document.querySelectorAll('.day-section').forEach(s => navObs.observe(s));
 </script>
-
 </body>
 </html>
